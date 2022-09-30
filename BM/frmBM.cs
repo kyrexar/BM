@@ -233,7 +233,7 @@ namespace BM
             m.btn.Text = res.ToString();
             m.btn.ForeColor = colores[res];
 
-            if (pruebas) this.Text = "Restantes contando al momento: " + CasillasRestantes() + " - "+ casillasRestantes.ToString() + " de 1 en 1 ";
+            if (pruebas) this.Text = "Restantes contando al momento: " + CasillasRestantes() + " - " + casillasRestantes.ToString() + " de 1 en 1 ";
 
             if (res == 0)
             {

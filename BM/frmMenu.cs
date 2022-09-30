@@ -11,14 +11,14 @@ namespace BM
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
-            txtAlto.Text = "10";
-            txtAncho.Text = "10";
-            txtMinas.Text = "10";
+            //txtAlto.Text = "10";
+            //txtAncho.Text = "10";
+            //txtMinas.Text = "10";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void txt_KeyPress(object sender, KeyPressEventArgs e)
@@ -43,53 +43,58 @@ namespace BM
 
         private void Crear()
         {
-            if (int.TryParse(txtAlto.Text, out int alto))
-            {
-                this.alto = alto;
-                if (alto >= 10 && alto <=20)
-                {
-                    if (int.TryParse(txtAncho.Text, out int ancho))
-                    {
-                        this.ancho = ancho;
-                        if (ancho >= 10 && ancho <= 20)
-                        {
-                            if (int.TryParse(txtMinas.Text, out int minas))
-                            {
-                                this.bombasCantidadInicial = minas;
-                                if (minas >= 10 && minas <= 99)
-                                {
-                                    nueva = true;
-                                    this.Close();
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Tiene que haber minimo 20 minas y maximo 99 ");
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Minas no es un numero");
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("El ancho tiene que ser minimo 10 y maximo 20");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ancho no es un numero");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("El alto tiene que ser minimo 10 y maximo 20");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Alto no es un numero");
-            }
+            alto = (int)numAlto.Value;
+            ancho = (int)numAncho.Value;
+            bombasCantidadInicial = (int)numMinas.Value;
+            Close();
+
+            //if (int.TryParse(numAlto.Text, out int alto))
+            //{
+            //    this.alto = alto;
+            //    if (alto >= 10 && alto <=20)
+            //    {
+            //        if (int.TryParse(numAncho.Text, out int ancho))
+            //        {
+            //            this.ancho = ancho;
+            //            if (ancho >= 10 && ancho <= 20)
+            //            {
+            //                if (int.TryParse(numMinas.Text, out int minas))
+            //                {
+            //                    this.bombasCantidadInicial = minas;
+            //                    if (minas >= 10 && minas <= 99)
+            //                    {
+            //                        nueva = true;
+            //                        this.Close();
+            //                    }
+            //                    else
+            //                    {
+            //                        MessageBox.Show("Tiene que haber minimo 20 minas y maximo 99 ");
+            //                    }
+            //                }
+            //                else
+            //                {
+            //                    MessageBox.Show("Minas no es un numero");
+            //                }
+            //            }
+            //            else
+            //            {
+            //                MessageBox.Show("El ancho tiene que ser minimo 10 y maximo 20");
+            //            }
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Ancho no es un numero");
+            //        }
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("El alto tiene que ser minimo 10 y maximo 20");
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Alto no es un numero");
+            //}
         }
     }
 }

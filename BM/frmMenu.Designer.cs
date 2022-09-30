@@ -30,13 +30,16 @@ namespace BM
         private void InitializeComponent()
         {
             this.lblAlto = new System.Windows.Forms.Label();
-            this.txtAlto = new System.Windows.Forms.TextBox();
-            this.txtAncho = new System.Windows.Forms.TextBox();
             this.lblAncho = new System.Windows.Forms.Label();
-            this.txtMinas = new System.Windows.Forms.TextBox();
             this.lblMinas = new System.Windows.Forms.Label();
             this.btnCrear = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.numAlto = new System.Windows.Forms.NumericUpDown();
+            this.numAncho = new System.Windows.Forms.NumericUpDown();
+            this.numMinas = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numAlto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAncho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinas)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAlto
@@ -48,22 +51,6 @@ namespace BM
             this.lblAlto.TabIndex = 0;
             this.lblAlto.Text = "Alto";
             // 
-            // txtAlto
-            // 
-            this.txtAlto.Location = new System.Drawing.Point(55, 12);
-            this.txtAlto.Name = "txtAlto";
-            this.txtAlto.Size = new System.Drawing.Size(100, 20);
-            this.txtAlto.TabIndex = 1;
-            this.txtAlto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
-            // 
-            // txtAncho
-            // 
-            this.txtAncho.Location = new System.Drawing.Point(55, 38);
-            this.txtAncho.Name = "txtAncho";
-            this.txtAncho.Size = new System.Drawing.Size(100, 20);
-            this.txtAncho.TabIndex = 3;
-            this.txtAncho.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
-            // 
             // lblAncho
             // 
             this.lblAncho.AutoSize = true;
@@ -72,14 +59,6 @@ namespace BM
             this.lblAncho.Size = new System.Drawing.Size(38, 13);
             this.lblAncho.TabIndex = 2;
             this.lblAncho.Text = "Ancho";
-            // 
-            // txtMinas
-            // 
-            this.txtMinas.Location = new System.Drawing.Point(55, 64);
-            this.txtMinas.Name = "txtMinas";
-            this.txtMinas.Size = new System.Drawing.Size(100, 20);
-            this.txtMinas.TabIndex = 5;
-            this.txtMinas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // lblMinas
             // 
@@ -110,18 +89,84 @@ namespace BM
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // numAlto
+            // 
+            this.numAlto.Location = new System.Drawing.Point(55, 13);
+            this.numAlto.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.numAlto.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numAlto.Name = "numAlto";
+            this.numAlto.Size = new System.Drawing.Size(100, 20);
+            this.numAlto.TabIndex = 8;
+            this.numAlto.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // numAncho
+            // 
+            this.numAncho.Location = new System.Drawing.Point(55, 39);
+            this.numAncho.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.numAncho.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numAncho.Name = "numAncho";
+            this.numAncho.Size = new System.Drawing.Size(100, 20);
+            this.numAncho.TabIndex = 9;
+            this.numAncho.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // numMinas
+            // 
+            this.numMinas.Location = new System.Drawing.Point(55, 65);
+            this.numMinas.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.numMinas.Minimum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.numMinas.Name = "numMinas";
+            this.numMinas.Size = new System.Drawing.Size(100, 20);
+            this.numMinas.TabIndex = 10;
+            this.numMinas.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(171, 132);
+            this.Controls.Add(this.numMinas);
+            this.Controls.Add(this.numAncho);
+            this.Controls.Add(this.numAlto);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnCrear);
-            this.Controls.Add(this.txtMinas);
             this.Controls.Add(this.lblMinas);
-            this.Controls.Add(this.txtAncho);
             this.Controls.Add(this.lblAncho);
-            this.Controls.Add(this.txtAlto);
             this.Controls.Add(this.lblAlto);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMenu";
@@ -129,6 +174,9 @@ namespace BM
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.frmMenu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numAlto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAncho)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,13 +185,13 @@ namespace BM
         #endregion
 
         private System.Windows.Forms.Label lblAlto;
-        private System.Windows.Forms.TextBox txtAlto;
-        private System.Windows.Forms.TextBox txtAncho;
         private System.Windows.Forms.Label lblAncho;
-        private System.Windows.Forms.TextBox txtMinas;
         private System.Windows.Forms.Label lblMinas;
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.NumericUpDown numAlto;
+        private System.Windows.Forms.NumericUpDown numAncho;
+        private System.Windows.Forms.NumericUpDown numMinas;
     }
 }
 
